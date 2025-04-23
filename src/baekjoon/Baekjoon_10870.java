@@ -18,7 +18,11 @@ public class Baekjoon_10870 {
             num2 += num1;
             num1 = temp;
         }
-        bw.write(num2+"");
+        if (n == 0) {
+            bw.write(num1 + "");
+        } else {
+            bw.write(num2+"");
+        }
         bw.flush();
         bw.close();
         br.close();
