@@ -2,25 +2,24 @@ package baekjoon;
 
 import java.io.*;
 
-public class Baekjoon_25238 {
+public class Baekjoon_17614 {
 
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        String[] arr = br.readLine().split(" ");
+        int n = Integer.parseInt(br.readLine());
+        int clap = 0;
 
-        double a = Double.parseDouble(arr[0]);
-        double b = Double.parseDouble(arr[1]);
-
-        double result = a * ((100 - b) / 100);
-
-        if (result >= 100) {
-            bw.write("0");
-        } else {
-            bw.write("1");
+        for (int i = 1; i <= n; i++) {
+            for (char c : String.valueOf(i).toCharArray()) {
+                if (c == '3' || c == '6' || c == '9') {
+                    clap++;
+                }
+            }
         }
+        bw.write(clap+"");
         bw.flush();
         bw.close();
         br.close();
